@@ -27,7 +27,7 @@ def test_not_authorized():
 @pytest.fixture(scope='session', autouse=True)
 def cleanup(request):
     def remove_folder():
-        params = {'path': path, 'limit': '0', 'permanently': 'true'}
+        params = {'path': path, 'permanently': 'true'}
         headers = {'Authorization': token}
         requests.delete(url=url, params=params, headers=headers)
 
